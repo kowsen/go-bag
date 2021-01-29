@@ -1,0 +1,56 @@
+{
+  "name": "svelte-app",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "sirv public",
+    "lint": "eslint --fix .",
+    "format": "prettier --write .",
+    "style-lint": "stylelint '**/*.(css|scss|svelte)' --fix",
+    "fix": "npm run lint && npm run style-lint && npm run format"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "eslint": "^7.18.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-svelte3": "^3.0.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1",
+    "prettier-plugin-svelte": "^2.1.1",
+    "rollup": "^2.3.4",
+    "rollup-plugin-cleaner": "^1.0.0",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-scss": "^2.6.1",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "stylelint": "^13.9.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^20.0.0",
+    "svelte": "^3.0.0"
+  },
+  "dependencies": {
+    "sirv-cli": "^1.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,svelte}": [
+      "eslint --fix-dry-run"
+    ],
+    "*.{js,svelte,json,yml,md,css,scss}": [
+      "npx prettier --write"
+    ],
+    "*.{css,scss,svelte}": [
+      "stylelint"
+    ]
+  }
+}

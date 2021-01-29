@@ -1,0 +1,25 @@
+@import 'constants';
+
+@function css-min($values...) {
+  @return min + unquote('(') + $values + unquote(')');
+}
+
+html {
+  --page-width: 99999999999;
+
+  transform-origin: top left;
+  transform: scale(
+    css-min(
+      1,
+      calc(
+        max(#{$min-viewport-width}, var(--page-width)) / #{$min-content-width}
+      )
+    )
+  );
+}
+
+body {
+  max-width: $max-content-width + px;
+  min-width: $min-content-width + px;
+  margin: 0 auto;
+}

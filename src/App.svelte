@@ -1,5 +1,6 @@
 <script>
   import './setup-responsive';
+  import './styles/global.scss';
 
   import { Router, Route } from 'svelte-routing';
   import Content from './Content.svelte';

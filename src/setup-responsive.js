@@ -1,4 +1,3 @@
-import './styles/global.scss';
 import './styles/scale.scss';
 import './styles/scroll.scss';
 

@@ -9,6 +9,6 @@
 
 <style>
   main {
-    margin: 24px;
+    padding: 24px;
   }
 </style>

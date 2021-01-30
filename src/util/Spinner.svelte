@@ -1,5 +1,5 @@
 <script>
-  import { onDestroy } from 'svelte';
+  import { setSafeInterval } from './safe-patch';
 
   export let seed = '...';
   export let stepLength = 200;
@@ -10,13 +10,9 @@
   let counter = 0;
   $: loadStr = seed.slice(0, counter % (seed.length + 1));
 
-  const counterInterval = setInterval(() => {
+  setSafeInterval(() => {
     counter += 1;
   }, stepLength);
-
-  onDestroy(() => {
-    clearInterval(counterInterval);
-  });
 </script>
 
 <span {style}>{loadStr}</span>

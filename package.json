@@ -8,7 +8,8 @@
     "lint": "eslint --fix .",
     "format": "prettier --write .",
     "style-lint": "stylelint '**/*.(css|scss|svelte)' --fix",
-    "fix": "npm run lint && npm run style-lint && npm run format"
+    "fix": "npm run lint && npm run style-lint && npm run format",
+    "deploy": "npm run fix && npm run build && firebase deploy"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",

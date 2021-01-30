@@ -11,7 +11,7 @@ This template gives you three things on top of a Svelte project:
 If you stumble upon this and wanna use it, you can use it to set up your project with this command:
 
 ```
-npx degit kowsen/go-bag my-project
+npx degit kowsen/go-bag#main my-project
 ```
 
 Just make sure you either disable husky or set up your project in a git repository or you'll get an error when you run npm install.

@@ -4,7 +4,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "start": "sirv public",
+    "start": "sirv public --single",
     "lint": "eslint --fix .",
     "format": "prettier --write .",
     "style-lint": "stylelint '**/*.(css|scss|svelte)' --fix",
@@ -36,7 +36,8 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
-    "sirv-cli": "^1.0.0"
+    "sirv-cli": "^1.0.0",
+    "svelte-routing": "^1.5.0"
   },
   "husky": {
     "hooks": {

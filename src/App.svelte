@@ -1,18 +1,30 @@
 <script>
   import './setup_responsive';
 
-  import Spinner from './util/Spinner.svelte';
+  import { Router, Route } from 'svelte-routing';
+  import Content from './Content.svelte';
+
+  export let url = '';
 </script>
 
-<main>
-  <h1>Kyle's go-bag</h1>
-  <p>Barebones responsive site template in Svelte!</p>
+<div class="content">
+  <Router {url}>
+    <h1>Kyle's go-bag</h1>
 
-  <Spinner />
-</main>
+    <main>
+      <Route path="/">
+        <Content />
+      </Route>
+
+      <Route>
+        <p>PAGE NOT FOUND</p>
+      </Route>
+    </main>
+  </Router>
+</div>
 
 <style>
-  main {
+  .content {
     padding: 24px;
   }
 </style>
